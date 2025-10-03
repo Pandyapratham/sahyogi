@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Utility for screen reader only content */
+@utility sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Utility for focus visible styles */
+@utility focus-outline {
+  outline: 3px solid hsl(var(--heroui-focus));
+  outline-offset: 2px;
+}
+
+/* Increase tap target sizes for better accessibility */
+@utility tap-target {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+/* Custom scrollbar for better visibility */
+@utility custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: hsl(var(--heroui-background));
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--heroui-default-400));
+    border-radius: 20px;
+    border: 3px solid hsl(var(--heroui-background));
+  }
+}
+
+/* Animation utilities */
+@utility fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@utility slide-up {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
